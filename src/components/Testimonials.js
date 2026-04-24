@@ -56,31 +56,52 @@ export default function Testimonials() {
     return () => clearInterval(interval);
   }, []);
 
-  const visibleReviews = activeIndex === 0 ? reviews.slice(0, 3) : reviews.slice(3, 6);
-
   return (
     <section className="testimonials" id="testimonials">
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">What Our Happy Families Say</h2>
-          <p className="section-subtitle">Real feedback from our top-rated Google & Justdial reviews for <strong>Guruartevents</strong>.</p>
+          <p className="section-subtitle">Real feedback from our top-rated Google &amp; Justdial reviews for <strong>Guruartevents</strong>.</p>
         </div>
         
-        <div className="testimonials-slider-container">
-          <div className="testimonials-grid fade-in-active">
-            {visibleReviews.map((review, idx) => (
-              <div key={idx} className={`testimonial-card border-${review.color}`}>
-                <div className={`quote-icon text-${review.color}`}>&quot;</div>
-                <p className="testimonial-text">&quot;{review.text}&quot;</p>
-                <div className="testimonial-author">
-                  <div className={`author-avatar bg-${review.color} text-${review.color}`}>{review.initial}</div>
-                  <div className="author-info">
-                    <h4>{review.name}</h4>
-                    <p className={`text-${review.color === 'primary' ? 'secondary' : 'primary'}`}>{review.type}</p>
+        <div className="testimonials-slider-outer">
+          <div 
+            className="testimonials-slider-track" 
+            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+          >
+            {/* Frame 1 */}
+            <div className="testimonials-frame">
+              {reviews.slice(0, 3).map((review, idx) => (
+                <div key={idx} className={`testimonial-card border-${review.color}`}>
+                  <div className={`quote-icon text-${review.color}`}>&quot;</div>
+                  <p className="testimonial-text">&quot;{review.text}&quot;</p>
+                  <div className="testimonial-author">
+                    <div className={`author-avatar bg-${review.color} text-${review.color}`}>{review.initial}</div>
+                    <div className="author-info">
+                      <h4>{review.name}</h4>
+                      <p className={`text-${review.color === 'primary' ? 'secondary' : 'primary'}`}>{review.type}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            
+            {/* Frame 2 */}
+            <div className="testimonials-frame">
+              {reviews.slice(3, 6).map((review, idx) => (
+                <div key={idx} className={`testimonial-card border-${review.color}`}>
+                  <div className={`quote-icon text-${review.color}`}>&quot;</div>
+                  <p className="testimonial-text">&quot;{review.text}&quot;</p>
+                  <div className="testimonial-author">
+                    <div className={`author-avatar bg-${review.color} text-${review.color}`}>{review.initial}</div>
+                    <div className="author-info">
+                      <h4>{review.name}</h4>
+                      <p className={`text-${review.color === 'primary' ? 'secondary' : 'primary'}`}>{review.type}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="slider-dots">
