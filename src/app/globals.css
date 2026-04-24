@@ -1139,3 +1139,47 @@ img {
         min-height: 350px;
     }
 }
+
+/* Contact Form Enhancements */
+.form-success-message {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    border: 1px solid rgba(137, 48, 176, 0.1);
+    animation: contactFadeIn 0.5s ease-out;
+}
+
+.form-success-message span {
+    font-size: 4rem;
+    color: #10b981;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.form-success-message p {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--on-surface);
+}
+
+.form-error-text {
+    color: #ef4444;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-submit-btn.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+    position: relative;
+}
+
+@keyframes contactFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

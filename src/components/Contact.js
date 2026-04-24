@@ -1,6 +1,43 @@
 'use client';
+import { useState } from 'react';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    eventType: '',
+    message: ''
+  });
+
+  const [status, setStatus] = useState('idle'); // idle, loading, success, error
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('loading');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', phone: '', eventType: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
+  };
+
   return (
     <div className="contact-page">
       {/* Contact Hero Section */}
@@ -79,49 +116,88 @@ export default function Contact() {
               {/* Right Column: Inquiry Form (Glassmorphism) */}
               <div className="contact-form-panel">
                 <h3 className="form-title">Plan an Inquiry</h3>
-                <p className="form-subtitle">
-                  Fill out the details below, and our curation team will reach out.
-                </p>
-
-                <form className="inquiry-form" onSubmit={(e) => e.preventDefault()}>
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label htmlFor="name">Full Name</label>
-                      <input type="text" id="name" placeholder="Enter your full name" required />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="phone">Phone Number</label>
-                      <input type="tel" id="phone" placeholder="Enter your phone number" required />
-                    </div>
+                {status === 'success' ? (
+                  <div className="form-success-message">
+                    <span className="material-symbols-outlined">check_circle</span>
+                    <p>Thank you! Your inquiry has been sent successfully. We will get back to you shortly.</p>
+                    <button onClick={() => setStatus('idle')} className="btn btn-primary">Send Another Inquiry</button>
                   </div>
+                ) : (
+                  <>
+                    <p className="form-subtitle">
+                      Fill out the details below, and our curation team will reach out.
+                    </p>
 
-                  <div className="form-group">
-                    <label htmlFor="eventType">Event Type</label>
-                    <select id="eventType" required>
-                      <option value="" disabled selected>
-                        Select an event
-                      </option>
-                      <option value="birthday">Birthday Party</option>
-                      <option value="babyshower">Baby Shower</option>
-                      <option value="anniversary">Anniversary</option>
-                      <option value="other">Other Celebration</option>
-                    </select>
-                  </div>
+                    <form className="inquiry-form" onSubmit={handleSubmit}>
+                      <div className="form-row">
+                        <div className="form-group">
+                          <label htmlFor="name">Full Name</label>
+                          <input 
+                            type="text" 
+                            id="name" 
+                            placeholder="Enter your full name" 
+                            required 
+                            value={formData.name}
+                            onChange={handleChange}
+                          />
+                        </div>
+                        <div className="form-group">
+                          <label htmlFor="phone">Phone Number</label>
+                          <input 
+                            type="tel" 
+                            id="phone" 
+                            placeholder="Enter your phone number" 
+                            required 
+                            value={formData.phone}
+                            onChange={handleChange}
+                          />
+                        </div>
+                      </div>
 
-                  <div className="form-group">
-                    <label htmlFor="message">Event Details</label>
-                    <textarea
-                      id="message"
-                      rows="5"
-                      placeholder="Tell us a little bit about what you have in mind..."
-                    ></textarea>
-                  </div>
+                      <div className="form-group">
+                        <label htmlFor="eventType">Event Type</label>
+                        <select 
+                          id="eventType" 
+                          required 
+                          value={formData.eventType}
+                          onChange={handleChange}
+                        >
+                          <option value="" disabled>
+                            Select an event
+                          </option>
+                          <option value="birthday">Birthday Party</option>
+                          <option value="babyshower">Baby Shower</option>
+                          <option value="anniversary">Anniversary</option>
+                          <option value="other">Other Celebration</option>
+                        </select>
+                      </div>
 
-                  <button type="submit" className="btn btn-primary form-submit-btn">
-                    Send Inquiry
-                    <span className="material-symbols-outlined icon-right">send</span>
-                  </button>
-                </form>
+                      <div className="form-group">
+                        <label htmlFor="message">Event Details</label>
+                        <textarea
+                          id="message"
+                          rows="5"
+                          placeholder="Tell us a little bit about what you have in mind..."
+                          value={formData.message}
+                          onChange={handleChange}
+                        ></textarea>
+                      </div>
+
+                      {status === 'error' && (
+                        <p className="form-error-text">Something went wrong. Please try again or call us directly.</p>
+                      )}
+
+                      <button 
+                        type="submit" 
+                        className={`btn btn-primary form-submit-btn ${status === 'loading' ? 'loading' : ''}`}
+                        disabled={status === 'loading'}
+                      >
+                        {status === 'loading' ? 'Sending...' : 'Send Inquiry'}
+                        <span className="material-symbols-outlined icon-right">send</span>
+                      </button>
+                    </form>
+                  </>
+                )}
               </div>
             </div>
           </div>
