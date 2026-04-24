@@ -2,39 +2,39 @@ export default function Portfolio() {
   const images = [
     {
       src: "https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=800&auto=format&fit=crop",
-      alt: "Luxury baby shower decoration"
+      alt: "Luxury baby shower decoration by Guruartevents"
     },
     {
       src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=800&auto=format&fit=crop",
-      alt: "Bespoke birthday balloon backdrop"
+      alt: "Bespoke birthday balloon backdrop by Guruartevents"
     },
     {
       src: "https://images.unsplash.com/photo-1558636508-e0db3814bd1d?q=80&w=800&auto=format&fit=crop",
-      alt: "First birthday marquee sign"
+      alt: "First birthday marquee sign by Guruartevents"
     },
     {
       src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop",
-      alt: "Thematic birthday setup"
+      alt: "Thematic birthday setup by Guruartevents"
     },
     {
       src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop",
-      alt: "Children's party magic show"
+      alt: "Children's party magic show by Guruartevents"
     },
     {
       src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800&auto=format&fit=crop",
-      alt: "Sophisticated anniversary stage"
+      alt: "Sophisticated anniversary stage by Guruartevents"
     },
     {
       src: "https://images.unsplash.com/photo-1530103043960-ef38714abb15?q=80&w=800&auto=format&fit=crop",
-      alt: "Vibrant floral decor from recent event"
+      alt: "Vibrant floral decor from recent Guruartevents event"
     },
     {
       src: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?q=80&w=800&auto=format&fit=crop",
-      alt: "Elegant lighting setup"
+      alt: "Elegant lighting setup by Guruartevents"
     },
     {
       src: "https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=800&auto=format&fit=crop",
-      alt: "Bespoke table centerpiece"
+      alt: "Bespoke table centerpiece by Guruartevents"
     }
   ];
 
@@ -43,7 +43,7 @@ export default function Portfolio() {
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">Our Recent Celebrations</h2>
-          <p className="section-subtitle">A glimpse into the magical moments we&apos;ve created for our clients, including images from our happy reviewers.</p>
+          <p className="section-subtitle">A collection of magical moments created by <strong>Guruartevents</strong>, including photos shared by our happy clients.</p>
         </div>
         <div className="portfolio-grid">
           {images.map((img, idx) => (

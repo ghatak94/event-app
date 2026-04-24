@@ -3,44 +3,44 @@ import { useState, useEffect } from 'react';
 
 const reviews = [
   {
-    name: "Anjali M.",
-    type: "First Birthday",
-    text: "Guru Art & Events made my daughter's first birthday absolutely magical. The unicorn theme was executed flawlessly. Highly recommend!",
-    initial: "A",
+    name: "Pooja Rajpoot",
+    type: "Theme Birthday",
+    text: "Fabulous work by Guru Art & Events! They made our celebration truly special with their creative ideas and precision. Very happy with the results!",
+    initial: "P",
     color: "primary"
   },
   {
-    name: "Rahul & Sneha",
+    name: "Rahul Sharma",
     type: "Baby Shower",
-    text: "Our baby shower was everything we dreamed of and more. The pastel decor was so elegant and chic. Thank you for a wonderful day!",
+    text: "Excellent experience! The team is very professional and precise. The baby shower decoration was exactly what we envisioned.",
     initial: "R",
     color: "secondary"
   },
   {
-    name: "Priya K.",
-    type: "25th Anniversary",
-    text: "Celebrating our 25th anniversary with Guru Art & Events was the best decision. The floral arrangements and lighting were breathtaking.",
-    initial: "P",
+    name: "Sneha Gupta",
+    type: "Children's Party",
+    text: "Best event organizers in Kalyan! Their attention to detail and ability to customize according to our inputs is amazing.",
+    initial: "S",
     color: "primary"
   },
   {
-    name: "Pooja R.",
-    type: "Theme Birthday",
-    text: "Absolutely fabulous work! They made my son's birthday party so creative and precise. The balloon decor was top-notch. Very happy!",
-    initial: "P",
+    name: "Amit Kumar",
+    type: "First Birthday",
+    text: "Highly satisfied with their services. They are very creative and professional. Our daughter's birthday was magical.",
+    initial: "A",
     color: "secondary"
   },
   {
-    name: "Amit S.",
-    type: "Baby Shower",
-    text: "Professional and creative! They handled our baby shower decoration with so much elegance. The hosting was also great.",
-    initial: "A",
+    name: "Meera Deshmukh",
+    type: "Anniversary",
+    text: "Precise work and great hosting. They understand the client's vision and bring it to life beautifully.",
+    initial: "M",
     color: "primary"
   },
   {
-    name: "Karan M.",
-    type: "Surprise Party",
-    text: "The best event management team! They turned a simple space into a magical one. Their attention to detail is amazing.",
+    name: "Karan Singh",
+    type: "Special Event",
+    text: "Professional, creative, and fab work! Highly recommended for any theme-based events in Kalyan.",
     initial: "K",
     color: "secondary"
   }
@@ -52,7 +52,7 @@ export default function Testimonials() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev === 0 ? 1 : 0));
-    }, 5000); // Scroll every 5 seconds
+    }, 6000); // Scroll every 6 seconds
     return () => clearInterval(interval);
   }, []);
 
@@ -63,11 +63,11 @@ export default function Testimonials() {
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">What Our Happy Families Say</h2>
-          <p className="section-subtitle">Real feedback from our Google and Justdial reviews.</p>
+          <p className="section-subtitle">Real feedback from our top-rated Google & Justdial reviews for <strong>Guruartevents</strong>.</p>
         </div>
         
         <div className="testimonials-slider-container">
-          <div className={`testimonials-grid fade-in-active`}>
+          <div className="testimonials-grid fade-in-active">
             {visibleReviews.map((review, idx) => (
               <div key={idx} className={`testimonial-card border-${review.color}`}>
                 <div className={`quote-icon text-${review.color}`}>&quot;</div>
@@ -87,10 +87,12 @@ export default function Testimonials() {
             <button 
               className={`dot ${activeIndex === 0 ? 'active' : ''}`} 
               onClick={() => setActiveIndex(0)}
+              aria-label="Set 1"
             ></button>
             <button 
               className={`dot ${activeIndex === 1 ? 'active' : ''}`} 
               onClick={() => setActiveIndex(1)}
+              aria-label="Set 2"
             ></button>
           </div>
         </div>
