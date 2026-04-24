@@ -9,7 +9,7 @@ export default function Contact() {
           <div className="section-header">
             <h1 className="section-title text-primary">Get in Touch</h1>
             <p className="section-subtitle">
-              Let's craft your next unforgettable moment together. We're here to listen, plan, and celebrate.
+              We&apos;re here to help! Let&apos;s start planning your next big moment together. We&apos;re here to listen, plan, and celebrate.
             </p>
           </div>
         </div>

@@ -8,8 +8,8 @@ export default function Testimonials() {
         </div>
         <div className="testimonials-grid">
           <div className="testimonial-card border-primary">
-            <div className="quote-icon text-primary">"</div>
-            <p className="testimonial-text">"Guruar Events made my daughter's first birthday absolutely magical. The unicorn theme was executed flawlessly. Highly recommend!"</p>
+            <div className="quote-icon text-primary">&quot;</div>
+            <p className="testimonial-text">&quot;Guruar Events made my daughter&apos;s first birthday absolutely magical. The unicorn theme was executed flawlessly. Highly recommend!&quot;</p>
             <div className="testimonial-author">
               <div className="author-avatar bg-primary text-primary">A</div>
               <div className="author-info">
@@ -19,19 +19,19 @@ export default function Testimonials() {
             </div>
           </div>
           <div className="testimonial-card border-secondary">
-            <div className="quote-icon text-secondary">"</div>
-            <p className="testimonial-text">"Our baby shower was everything we dreamed of and more. The pastel decor was so elegant and chic. Thank you for a wonderful day!"</p>
+            <div className="quote-icon text-secondary">&quot;</div>
+            <p className="testimonial-text">&quot;Our baby shower was everything we dreamed of and more. The pastel decor was so elegant and chic. Thank you for a wonderful day!&quot;</p>
             <div className="testimonial-author">
               <div className="author-avatar bg-secondary text-secondary">R</div>
               <div className="author-info">
-                <h4>Rahul & Sneha</h4>
+                <h4>Rahul &amp; Sneha</h4>
                 <p className="text-primary">Baby Shower</p>
               </div>
             </div>
           </div>
           <div className="testimonial-card border-primary">
-            <div className="quote-icon text-primary">"</div>
-            <p className="testimonial-text">"Celebrating our 25th anniversary with Guruar Events was the best decision. The floral arrangements and lighting were breathtaking."</p>
+            <div className="quote-icon text-primary">&quot;</div>
+            <p className="testimonial-text">&quot;Celebrating our 25th anniversary with Guruar Events was the best decision. The floral arrangements and lighting were breathtaking.&quot;</p>
             <div className="testimonial-author">
               <div className="author-avatar bg-primary text-primary">P</div>
               <div className="author-info">

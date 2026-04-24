@@ -4,7 +4,7 @@ export default function Portfolio() {
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">Our Recent Celebrations</h2>
-          <p className="section-subtitle">A glimpse into the magical moments we've created for our clients.</p>
+          <p className="section-subtitle">A glimpse into the magical moments we&apos;ve created for our clients.</p>
         </div>
         <div className="portfolio-grid">
           <div className="portfolio-item">

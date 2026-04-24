@@ -28,7 +28,7 @@ export default function Services() {
           <div className="service-card">
             <div className="service-bg-accent primary"></div>
             <span className="material-symbols-outlined service-icon text-primary">toys</span>
-            <h3 className="service-title">Children's Party</h3>
+            <h3 className="service-title">Children&apos;s Party</h3>
             <p className="service-desc">Fun, vibrant environments designed to spark joy and imagination.</p>
           </div>
           <div className="service-card md-span-2 lg-span-1">

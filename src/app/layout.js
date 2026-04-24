@@ -2,7 +2,7 @@ import './globals.css';
 
 export const metadata = {
   title: 'Guruar Events - Making Every Celebration Special',
-  description: 'Bespoke event planning in Kalyan for birthdays, baby showers, anniversaries, and children\'s parties.',
+  description: 'Bespoke event planning in Kalyan for birthdays, baby showers, anniversaries, and children&apos;s parties.',
 };
 
 export default function RootLayout({ children }) {
