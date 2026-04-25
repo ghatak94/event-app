@@ -11,12 +11,12 @@ export default function CTA() {
               Contact Guruar Events today for a free consultation and bespoke event planning in Kalyan.
             </p>
             <div className="cta-buttons">
-              <a href="tel:09619801373" className="btn btn-white text-primary flex-center">
+              <a href="https://wa.me/919619801373" className="btn btn-white text-primary flex-center">
                 <span className="material-symbols-outlined icon">call</span>
-                Call Now
+                Chat on WhatsApp
               </a>
-              <a href="#cta" className="btn btn-outline-white flex-center">
-                Request a Quote
+              <a href="#contact" className="btn btn-outline-white flex-center">
+                Get Free Consultation
               </a>
             </div>
           </div>

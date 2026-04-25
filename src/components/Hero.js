@@ -4,18 +4,17 @@ export default function Hero() {
       <div className="container hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
-            Making Every <br />
-            <span className="text-gradient">Celebration</span> Special
+            Event Planner in Kalyan
           </h1>
           <p className="hero-text">
-            Bespoke event planning in Kalyan. From magical birthdays to elegant baby showers, we turn your dreams into unforgettable memories.
+            We design unforgettable weddings, corporate events & celebrations—handled end-to-end so you can enjoy stress-free moments.
           </p>
           <div className="hero-buttons">
-            <a href="#portfolio" className="btn btn-primary">
-              View Our Work
+            <a href="https://wa.me/919619801373" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              Get Free Quote on WhatsApp
             </a>
-            <a href="#cta" className="btn btn-secondary">
-              Book Your Event
+            <a href="#contact" className="btn btn-secondary">
+              Check Availability
             </a>
           </div>
         </div>
@@ -25,7 +24,7 @@ export default function Hero() {
             <div className="hero-image-overlay"></div>
           </div>
           <div className="floating-accent">
-            <p className="accent-number">500+</p>
+            <p className="accent-number">50+</p>
             <p className="accent-text">Events Curated in Kalyan</p>
           </div>
         </div>

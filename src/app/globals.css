@@ -1183,3 +1183,216 @@ img {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* Trust Strip */
+.trust-strip {
+    background-color: var(--surface-container-low);
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.trust-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem 4rem;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.trust-icon {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.trust-item p {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--on-surface-variant);
+}
+
+@media (max-width: 768px) {
+    .trust-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+
+/* Redesigned Trust Strip */
+.trust-strip-redesign {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding: 2rem 0;
+    color: white;
+    box-shadow: 0 10px 40px rgba(137, 48, 176, 0.15);
+    position: relative;
+    z-index: 5;
+}
+
+.trust-strip-redesign .trust-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem 4rem;
+}
+
+.trust-strip-redesign .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.trust-icon-box {
+    background: rgba(255, 255, 255, 0.2);
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.trust-item:hover .trust-icon-box {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.trust-strip-redesign .trust-item p {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 991px) {
+    .trust-strip-redesign .trust-container {
+        gap: 1.5rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .trust-strip-redesign .trust-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    .trust-strip-redesign .trust-item {
+        flex-direction: column;
+    }
+}
+
+/* Service Card Quote Button */
+.btn-service-quote {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.25rem;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-service-quote:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(137, 48, 176, 0.2);
+}
+
+/* Services Action Button */
+.services-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+/* Why Choose Us */
+.why-choose-us {
+    padding: 8rem 0;
+    background-color: var(--surface);
+    position: relative;
+    overflow: hidden;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+@media (min-width: 768px) {
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.why-card {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2.5rem;
+    background-color: var(--surface-container-lowest);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(137, 48, 176, 0.08);
+    border-color: rgba(137, 48, 176, 0.1);
+}
+
+.why-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, rgba(137, 48, 176, 0.1), rgba(167, 41, 90, 0.1));
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.4s ease;
+}
+
+.why-card:hover .why-icon-wrapper {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.why-icon {
+    font-size: 32px;
+    color: var(--primary);
+    transition: color 0.4s ease;
+}
+
+.why-card:hover .why-icon {
+    color: white;
+}
+
+.why-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--on-surface);
+}
+
+.why-text {
+    font-size: 1rem;
+    color: var(--on-surface-variant);
+    line-height: 1.6;
+}

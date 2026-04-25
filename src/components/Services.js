@@ -38,6 +38,9 @@ export default function Services() {
             <p className="service-desc">Immersive thematic setups paired with engaging entertainment.</p>
           </div>
         </div>
+        <div className="services-action">
+          <a href="#contact" className="btn btn-primary">Get Free Consultation</a>
+        </div>
       </div>
     </section>
   );
